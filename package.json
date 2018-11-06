@@ -1,19 +1,45 @@
 {
-  "name": "bitcoin-pwa",
+  "name": "minimal-react-boilerplate",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "bulma": "^0.7.1",
-    "coinlist": "^2.0.0",
-    "font-awesome": "^4.7.0",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4"
-  },
+  "description": "Minimal Webpack 4 and Babel 7 boilerplate for React",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aledileo17/minimal-react-boilerplate.git"
+  },
+  "author": "ADL",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aledileo17/minimal-react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/aledileo17/minimal-react-boilerplate#readme",
+  "devDependencies": {
+    "@babel/core": "7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-transform-regenerator": "^7.0.0",
+    "@babel/preset-env": "7.1.0",
+    "@babel/preset-react": "7.0.0",
+    "babel-loader": "8.0.4",
+    "coinlist": "^3.1.1",
+    "css-loader": "1.0.0",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "4.9.3",
+    "react-hot-loader": "4.3.11",
+    "sass-loader": "7.1.0",
+    "style-loader": "0.23.1",
+    "webpack": "4.20.2",
+    "webpack-cli": "3.1.2",
+    "webpack-dev-server": "3.1.9"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "bulma": "^0.7.2",
+    "react": "^16.7.0-alpha.0",
+    "react-dom": "^16.7.0-alpha.0"
   }
 }

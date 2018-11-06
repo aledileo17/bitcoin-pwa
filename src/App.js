@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CryptoPrinter from "./CryptoPrinter";
 import "bulma/css/bulma.css";
-import "font-awesome/css/font-awesome.css";
+// import "font-awesome/css/font-awesome.css";
 import coinlist from "coinlist";
 
 class App extends Component {
