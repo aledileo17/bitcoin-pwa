@@ -2,7 +2,7 @@
   "name": "crypto-price",
   "routes": [
     {
-        "src": "dist/index.html
+        "src": "/dist"
     }
 ]
 }
