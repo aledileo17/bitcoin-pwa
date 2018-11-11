@@ -1,7 +1,7 @@
-const webpack = require("webpack");
+const path = require("path");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-require("@babel/polyfill");
-
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   entry: ["@babel/polyfill", "./src/index.js"],
   module: {
@@ -12,8 +12,13 @@ module.exports = {
         use: ["babel-loader"]
       },
       {
-        test: /\.(css|scss)$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
+        test: /\.(css|scss|sass)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          //   "style-loader",
+          "css-loader",
+          "sass-loader"
+        ]
       },
       {
         test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
@@ -30,13 +35,18 @@ module.exports = {
     filename: "bundle.js"
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    new CleanWebpackPlugin(["dist"]),
     new HtmlWebpackPlugin({
+      title: "Production",
       template: __dirname + "/public/index.html"
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
     })
   ],
-  devServer: {
-    contentBase: "./dist",
-    hot: true
+  output: {
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist")
   }
 };
