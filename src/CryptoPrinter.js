@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import "bulma/css/bulma.css";
+import "./CryptoPrinter.css";
+// import "bulma/css/bulma.css";
 
 class CryptoPrinter extends Component {
   state = {
@@ -18,7 +19,6 @@ class CryptoPrinter extends Component {
           price: price[this.props.coin][this.props.currency]
         })
       );
-
   }
 
   render() {
